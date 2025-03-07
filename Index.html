@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalaSuri Research Archive</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #about {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(20px);
+            opacity: 0;
+            z-index: 50;
+        }
+        #about.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-green-250">
+    <header class="bg-green-600 text-white text-center p-6 shadow-lg relative flex items-center justify-center">
+        <img src="mnhs.png.png" alt="TalaSuri Left Logo" class="w-20 h-20 rounded-full border-2 border-white shadow-lg mr-6">
+        <div class="flex flex-col items-center">
+            <h1 class="text-4xl font-bold">TalaSuri Research Archive</h1>
+            <p class="mt-2">Preserving Insight, Empowering Tomorrow</p>
+        </div>
+        <img src="talasuri.png.png" alt="TalaSuri Right Logo" class="w-20 h-20 rounded-full border-2 border-white shadow-lg ml-6">
+
+        <div class="absolute top-4 right-4">
+            <button onclick="toggleAbout()" class="bg-white text-green-600 px-3 py-2 rounded-lg shadow-lg cursor-pointer hover:bg-green-700 hover:text-white transition duration-300">
+                About Us
+            </button>
+        </div>
+    </header>
+
+    <div id="about" class="bg-white p-4 shadow-lg rounded-lg fixed bottom-10 right-10 w-64 hidden">
+        <h3 class="text-xl font-bold text-green-600">About Us</h3>
+        <p class="mt-2 text-gray-600">TalaSuri Research Archive is a digital platform designed to preserve and share research papers created by the students of Meycauayan National High School, empowering tomorrow through knowledge.</p>
+        <button onclick="toggleAbout()" class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-green-700">Close</button>
+    </div>
+
+    <div class="container mx-auto p-6">
+        <div class="flex justify-center mb-6 relative">
+            <input type="text" id="search" placeholder="🔍 Search research papers..." class="w-full md:w-2/3 p-3 rounded-full border border-gray-300 shadow-lg text-center text-green-700 focus:ring-2 focus:ring-green-400 transition duration-300" onkeyup="searchPapers()">
+        </div>
+        
+        <div class="flex justify-center space-x-4 mb-6">
+            <button onclick="filterPapers('Quantitative Study')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow-lg hover:bg-green-700 text-lg font-bold">Quantitative</button>
+            <button onclick="filterPapers('Qualitative Study')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow-lg hover:bg-green-700 text-lg font-bold">Qualitative</button>
+            <button onclick="filterPapers('Mixed Study')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow-lg hover:bg-green-700 text-lg font-bold">Mixed Method</button>
+            <button onclick="filterPapers('All')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow-lg hover:bg-green-700 text-lg font-bold">Show All</button>
+        </div>
+
+        <div id="papers" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Technology Adoption" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">Research on Students Trust, Perceived Accuracy and Ethical Awareness on using ChatGPT</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Naldoza, B, P. Orbe, R., et al.</p>
+                <p class="mt-4 text-gray-600">The study aimed to shed light on the extent to which senior high school students at Meycauayan National High School trusted and perceived the accuracy of the content produced by ChatGPT, and how this trust and perception affected their ethical awareness of the usage of AI in education.</p>
+              
+                <a href="SHS percieved, trust, ethical.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">Assessing the impacts of Hands-on Practices on Academic Performance on the subject of Computer System Servicing</h2>
+                <p class="mt-2 text-sm text-gray-500">Author: Alciso, A, A.</p>
+                <p class="mt-2 text-gray-600">This study also provides the important information that this study needs and it justifies of how 
+                    significant  the  impacts  of  Hands-on  practices  on  the  academic  performance  of  Grade  12  Information  and Communication Technology (ICT) students in Computer System Servicing (CSS) subject.</p>
+                <a href="ALDRIN-SDO-FINAL-RESEARCH.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">Digital Divide: Assessing Student-Perceived Proficiency of Digital Immigrant-Educators in Utilizing Google Drive in Senior High at Meycauayan National High School</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Aragon, K. Olid, C. et al.</p>
+                <p class="mt-2 text-gray-600">This study aims to examine student pe-[=]
+                    
+                    rceptions of teachers' proficiency in using Google 
+                    Drive, focusing on its impact on instructional support and classroom management. By exploring these  areas,  this  research  seeks  to  contribute  to  the  broader  understanding  of  how  digital  tools can  be  effectively  leveraged  to  enhance  the  educational  experience  for  both  teachers  and students.</p>
+                <a href="kissa.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">Measuring The Word Processing Knowledge In Microsoft Word Through Self-Assessment Among Grade 11 Information And Communication Technology Students In Meycauayan National High School Academic Year 2024-2025</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Bael, J. G., et al.</p>
+                <p class="mt-2 text-gray-600">As technology advances, the knowledge on how to use word processors become not only helpful but increasingly needed, particularly in educational institutions where students must submit assignments, reports, and projects in digital format. The research gap is that there were no previous studies that measured the word processing knowledge in Microsoft Word of Grade 11 Information and Communication Technology (ICT) students in Meycauayan National High School. Assessing their knowledge is critical since they just finished Junior High School and are new to the strand.</p>
+                <a href="bael.png.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">A Descriptive Cross-Sectional Analysis Of Social Media Information Literacy On Facebook Among Senior High School Students In Meycauayan National High School</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Cortez, J., Sagum, P. et al.</p>
+                <p class="mt-2 text-gray-600">This research will assess the literacy skills of senior high school students at Meycauayan National High School on Facebook. By staying informed and critically evaluating the content students encounter on social media platforms, they can make better decisions and shield themselves from misinformation</p>
+                <a href="joyce.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">Evaluating The Competency Level Of Students In Basic Computer Hardware Parts Among Grade 12 Non-Ict Students In Meycauayan National High School For The Academic Year 2024-2025</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Camacho, K., Leonor. E, P. et al.</p>
+                <p class="mt-2 text-gray-600">This  study  aims  to  evaluate  the  competency  level  of  Grade  12  Non-ICT  students  at  Meycauayan  National  High  School regarding basic computer hardware components for the academic year 2024-2025. Understanding computer  hardware  is  essential  in  a  technologically  advanced  environment  for  practical  applications  and  personal  and  professional growth. However, non-ict students often lack practical computer hardware skills, such as installation and  maintenance,  due  to  limited  opportunities  for  hands-on  instruction. </p>
+                <a href="eunice.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">Determining the Influence of Parental Absence on Behavior and Academic Performance of Senior High School Students at Meycauayan National High School</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Rue, F. E., et al.</p>
+                <p class="mt-2 text-gray-600">  This  study  is  a  descriptive  study  aimed  at  understanding  the  influence  between parental absence and the behavior and academic results of high school students. In this study, a  purposive-based sample with snowball sample method was used to evaluate the impact of parental absence  on  the  behavior  and  academic  performance  of  selected  12th  grade  students.</p>
+                <a href="ate rue.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">The Impact of Sleep Deprivation on Cognitive Function in Senior High School Student.</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Padriquez, Y., Par, C., Mollasgo, F. et al.</p>
+                <p class="mt-2 text-gray-600">The aim of this study is to know and understand the effect of sleep deprivation to cognitive function of senior high school student. This also use the descriptive research design just to know and to describe the impact of this variable.</p>
+                <a href="frances.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">Awareness  on  Cyber  Security  Practices  Among  Grade  10  Computer  System  Servicing</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: De Castro, A., Dolores, J. et al.</p>
+                <p class="mt-2 text-gray-600">This  study  explore  the  awareness  on  cyber  security  practices  among  grade  10  computer  system  servicing  (CSS) specialized students. In the increasing incidence of cyber threats in this world understanding cyber security practices are crucial. The researchers wants to assess the awareness of students on several cyber security practices, including strong  password,  online  safety,  phishing  attacks,  data  privacy  and  so  on.</p>
+                <a href="angela.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">The Relationship Between Computer Access and Academic Performances of Grade 12 Information and Communication Technology Students in Meycauayan National High School</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Andres, M. et al.</p>
+                <p class="mt-2 text-gray-600">This purpose of this study is to find whether computer access affects the students' academic performance, negatively or positively. This study will provide insights into how computer access influences the academic success of Information and Communication Technology students but also their readiness for future careers that require digital skills.</p>
+                <a href="jelan.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">Relationship among Egoistic, Altruistic and Biospheric Value Orientations of Young Consumers Purchasing Intention on Sustainable Product in Meycauayan City</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Caacbay. J, O., Victoriano. C, S. et al.</p>
+                <p class="mt-2 text-gray-600">This study provides participants' purchase intentions for sustainable products related to their value orientations. The research offers significant insights into value orientation on purchasing intentions of sustainable products. It contributes to shaping a more sustainable society by linking personal values with purchasing intentions.</p>
+                <a href="cha.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">Evaluation of Water Quality and Filtration Methods for Household Use in the City of Meycauayan Bulacan for Everyday Water Usage</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Navarro, S. et al.</p>
+                <p class="mt-2 text-gray-600">The study evaluates water quality and filtration methods for household use in Meycauayan, Bulacan, focusing on identifying contaminants and assessing traditional methods such as boiling and distillation. Given the area's industrial activities, which significantly contribute to water pollution (Diwa et al., 2021), the research aligns with several UN Sustainable Development Goals sincluding Goal 6 (Clean Water and Sanitation) and Goal 3 (Good Health and Well-being), by addressing water safety and reducing waterborne diseases. Using an experimental research design, researchers collected water samples from three different locations in Meycauayan to ensure diverse representation</p>
+                <a href="sabb.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">Cases in Phases: A Study in Vitamin C Content in Different Stage of Ripeness</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Suellan II, M. Austria, J. et al.</p>
+                <p class="mt-2 text-gray-600">This study aims to measure the vitamin C in different stages of ripeness of Muntingia calaburalinn. This study also aims to determine the stage of ripeness of Muntingia calabura linn that has the mostvitamin C content.</p>
+                <a href="lois.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">The  Effect  of  Absence  of  Programming subject in Meycauayan National High School among Grade 12 Information and Communication technology Student's Technical Proficiency at the Academic Year 2024-2025</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Francisco, G. et al.</p>
+                <p class="mt-2 text-gray-600">This  paper  explores  why  teaching  programming is important, the challenges involved, and how it should be taught. Teachers, who  guide learning in classrooms, need clear and practical advice on what to teach and how to teach programming effectively </p>
+                <a href="gab.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
+                <h2 class="text-xl font-bold text-green-600 mt-2">Assessing Cyber Security Awareness Among Incoming Senior High School Students In Meycauayan National High School Academic Year 2024-2025</h2>
+                <p class="mt-2 text-sm text-gray-500">Authors: Authentico, K. et al.</p>
+                <p class="mt-2 text-gray-600">This study contributes to the growing body of research aimed at ensuring that students are better prepared to navigate the digital landscape safely. The findings of this research will not only benefit the students and educators at Meycauayan National High School but also offer valuable insights into improving cybersecurity education for high school students across various institutions</p>
+                <a href="thea.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchPapers() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let papers = document.querySelectorAll("#papers > div");
+            
+            papers.forEach(paper => {
+                let title = paper.querySelector("h2").innerText.toLowerCase();
+                let description = paper.querySelector("p").innerText.toLowerCase();
+                if (title.includes(input) || description.includes(input)) {
+                    paper.style.display = "block";
+                } else {
+                    paper.style.display = "none";
+                }
+            });
+        }
+        
+
+        function toggleAbout() {
+            const about = document.getElementById("about");
+            about.classList.toggle("hidden");
+            about.classList.toggle("show");
+        }
+
+        function filterPapers(category) {
+            let papers = document.querySelectorAll("#papers > div");
+            
+            papers.forEach(paper => {
+                let paperCategory = paper.getAttribute("data-category");
+                if (category === "All" || paperCategory === category) {
+                    paper.style.display = "block";
+                } else {
+                    paper.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
