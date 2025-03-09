@@ -19,15 +19,16 @@
     </style>
 </head>
 <body class="bg-green-250">
-   <header class="bg-green-600 text-white text-center p-6 shadow-lg relative flex flex-col md:flex-row items-center justify-center">
-        <img src="mnhs.png.png" alt="TalaSuri Left Logo" class="w-20 h-20 rounded-full border-2 border-white shadow-lg mr-6">
-        <div class="flex flex-col items-center">
-            <h1 class="text-4xl font-bold">TalaSuri Research Archive</h1>
-            <p class="mt-2">Preserving Insight, Empowering Tomorrow</p>
+    <header class="bg-green-600 text-white text-center p-6 shadow-lg relative flex flex-col md:flex-row items-center justify-center">
+        <div class="flex items-center">
+            <img src="mnhs.png.png" alt="TalaSuri Left Logo" class="w-20 h-20 rounded-full border-2 border-white shadow-lg mr-4">
+            <div class="flex flex-col items-center">
+                <h1 class="text-4xl font-bold">TalaSuri Research Archive</h1>
+                <p class="mt-2">Preserving Insight, Empowering Tomorrow</p>
+            </div>
+            <img src="talasuri.png.png" alt="TalaSuri Right Logo" class="w-20 h-20 rounded-full border-2 border-white shadow-lg ml-4">
         </div>
-        <img src="talasuri.png.png" alt="TalaSuri Right Logo" class="w-20 h-20 rounded-full border-2 border-white shadow-lg ml-6">
-
-        <div class="absolute top-4 right-4">
+        <div class="absolute top-2 right-2">
             <button onclick="toggleAbout()" class="bg-white text-green-600 px-3 py-2 rounded-lg shadow-lg cursor-pointer hover:bg-green-700 hover:text-white transition duration-300">
                 About Us
             </button>
@@ -45,10 +46,10 @@
             <input type="text" id="search" placeholder="🔍 Search research papers..." class="w-full md:w-2/3 p-3 rounded-full border border-gray-300 shadow-lg text-center text-green-700 focus:ring-2 focus:ring-green-400 transition duration-300" onkeyup="searchPapers()">
         </div>
         
-        <div class="flex justify-center space-x-4 mb-6">
-            <button onclick="filterPapers('Quantitative Study')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow-lg hover:bg-green-500 text-lg font-bold">Quantitative</button>
-            <button onclick="filterPapers('Qualitative Study')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow-lg hover:bg-green-500 text-lg font-bold">Qualitative</button>
-            <button onclick="filterPapers('Mixed Study')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow-lg hover:bg-green-500 text-lg font-bold">Mixed Method</button>
+        <div class="flex flex-wrap justify-center space-x-0 md:space-x-4 mb-6">
+            <button onclick="filterPapers('Quantitative Study')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow-lg hover:bg-green-500 text-lg font-bold mb-2 md:mb-0">Quantitative</button>
+            <button onclick="filterPapers('Qualitative Study')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow-lg hover:bg-green-500 text-lg font-bold mb-2 md:mb-0">Qualitative</button>
+            <button onclick="filterPapers('Mixed Study')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow-lg hover:bg-green-500 text-lg font-bold mb-2 md:mb-0">Mixed Method</button>
             <button onclick="filterPapers('All')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow-lg hover:bg-green-500 text-lg font-bold">Show All</button>
         </div>
 
