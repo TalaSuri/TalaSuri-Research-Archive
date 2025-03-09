@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024">
     <title>TalaSuri Research Archive</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
@@ -16,6 +16,17 @@
             transform: translateY(0);
             opacity: 1;
         }
+
+/*         THIS IS FOR THE AUTOMATIC DESKTOP VIEW added by mocha himself */
+        body {
+    min-width: 1024px;
+}
+@media (max-width: 768px) { 
+    body {
+        width: 1024px;
+        overflow-x: auto;
+    }
+}
     </style>
 </head>
 <body class="bg-green-250">
