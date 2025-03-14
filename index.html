@@ -19,15 +19,26 @@
     </style>
 </head>
 <body class="bg-green-250">
-    <header class="bg-green-600 text-white text-center p-6 shadow-lg relative flex items-center justify-center">
-        <img src="mnhs.png.png" alt="TalaSuri Left Logo" class="w-20 h-20 rounded-full border-2 border-white shadow-lg mr-6">
-        <div class="flex flex-col items-center">
-            <h1 class="text-4xl font-bold">TalaSuri Research Archive</h1>
-            <p class="mt-2">Preserving Insight, Empowering Tomorrow</p>
+    <header class="bg-green-600 text-white text-center p-6 shadow-lg relative flex flex-col items-center justify-center" style="position: relative; overflow: hidden;">
+        <!-- Background Images -->
+        <div class="absolute inset-0 flex">
+            <img src="kissa1.jpg" class="w-1/5 h-full object-cover opacity-40">
+            <img src="babbagee.jpg" class="w-1/5 h-full object-cover opacity-40">
+            <img src="yuwi.jpg" class="w-1/5 h-full object-cover opacity-40">
+            <img src="bea2.jpg" class="w-1/5 h-full object-cover opacity-40">
+            <img src="rhayley.jpg" class="w-1/5 h-full object-cover opacity-40">
         </div>
-        <img src="talasuri.png.png" alt="TalaSuri Right Logo" class="w-20 h-20 rounded-full border-2 border-white shadow-lg ml-6">
-
-        <div class="absolute top-4 right-4">
+        
+        <div class="relative z-10 flex items-center mb-4">
+            <img src="mnhs.png.png" alt="TalaSuri Left Logo" class="w-20 h-20 rounded-full border-2 border-white shadow-lg mr-6">
+            <div class="flex flex-col items-center">
+                <h1 class="text-4xl font-bold">TalaSuri Research Archive</h1>
+                <p class="mt-2">Preserving Insight, Empowering Tomorrow</p>
+            </div>
+            <img src="talasuri.png.png" alt="TalaSuri Right Logo" class="w-20 h-20 rounded-full border-2 border-white shadow-lg ml-6">
+        </div>
+        
+        <div class="absolute top-4 right-4 z-10">
             <button onclick="toggleAbout()" class="bg-white text-green-600 px-3 py-2 rounded-lg shadow-lg cursor-pointer hover:bg-green-700 hover:text-white transition duration-300">
                 About Us
             </button>
@@ -58,7 +69,6 @@
                 <h2 class="text-xl font-bold text-green-600 mt-2">Research on Students Trust, Perceived Accuracy and Ethical Awareness on using ChatGPT</h2>
                 <p class="mt-2 text-sm text-gray-500">Authors: Naldoza, B, P. Orbe, R., et al.</p>
                 <p class="mt-4 text-gray-600">The study aimed to shed light on the extent to which senior high school students at Meycauayan National High School trusted and perceived the accuracy of the content produced by ChatGPT, and how this trust and perception affected their ethical awareness of the usage of AI in education.</p>
-              
                 <a href="SHS percieved, trust, ethical.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
             </div>
             <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105" data-title="Research on Student Engagement" data-category="Quantitative Study">
@@ -73,9 +83,7 @@
                 <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Quantitative Study</span>
                 <h2 class="text-xl font-bold text-green-600 mt-2">Digital Divide: Assessing Student-Perceived Proficiency of Digital Immigrant-Educators in Utilizing Google Drive in Senior High at Meycauayan National High School</h2>
                 <p class="mt-2 text-sm text-gray-500">Authors: Aragon, K. Olid, C. et al.</p>
-                <p class="mt-2 text-gray-600">This study aims to examine student pe-[=]
-                    
-                    rceptions of teachers' proficiency in using Google 
+                <p class="mt-2 text-gray-600">This study aims to examine student perceptions of teachers' proficiency in using Google 
                     Drive, focusing on its impact on instructional support and classroom management. By exploring these  areas,  this  research  seeks  to  contribute  to  the  broader  understanding  of  how  digital  tools can  be  effectively  leveraged  to  enhance  the  educational  experience  for  both  teachers  and students.</p>
                 <a href="kissa.pdf" class="text-green-600 mt-4 inline-block hover:underline">Read More</a>
             </div>
@@ -222,6 +230,8 @@
                 }
             });
         }
+
+        
     </script>
 </body>
 </html>
